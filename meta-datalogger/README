@@ -5,23 +5,12 @@ Please see the corresponding sections below for details.
 Dependencies
 ============
 
-  URI: <first dependency>
-  branch: <branch name>
+  URI: https://git.yoctoproject.org/poky
+  branch: scargaph
 
-  URI: <second dependency>
-  branch: <branch name>
+  URI: https://github.com/openembedded/meta-openembedded.git
+  branch: scargaph
 
-  .
-  .
-  .
-
-Patches
-=======
-
-Please submit any patches against the meta-datalogger layer to the xxxx mailing list (xxxx@zzzz.org)
-and cc: the maintainer:
-
-Maintainer: XXX YYYYYY <xxx.yyyyyy@zzzzz.com>
 
 Table of Contents
 =================
@@ -29,13 +18,21 @@ Table of Contents
   I. Adding the meta-datalogger layer to your build
  II. Misc
 
-
 I. Adding the meta-datalogger layer to your build
 =================================================
 
-Run 'bitbake-layers add-layer meta-datalogger'
+To include the meta-datalogger layer in your Yocto build, run the following command:
+
+    bitbake-layers add-layer meta-datalogger
+
+Ensure that the layer dependencies are met before adding the layer.
 
 II. Misc
 ========
 
---- replace with specific information about the meta-datalogger layer ---
+The meta-datalogger layer provides recipes for building a datalogger image and kernel modules. Key components include:
+
+1. `recipes-core/images/datalogger-image.bb`: Defines the datalogger image.
+2. `recipes-kernel/rtl8192eu/rtl8192eu_1.0.bb`: Provides the recipe for the RTL8192EU Wi-Fi driver.
+
+For more information, refer to the layer configuration file `conf/layer.conf` and the respective recipes.
